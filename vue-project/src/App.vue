@@ -2,6 +2,7 @@
 import { defineComponent } from "vue";
 import { ElContainer, ElHeader, ElMain } from "element-plus";
 import Navbar from "./components/NavBar/Navbar.vue";
+import Profile from "./components/Profile/Profile.vue";
 
 export default defineComponent({
   components: {
@@ -9,6 +10,7 @@ export default defineComponent({
     ElHeader,
     ElMain,
     Navbar,
+    Profile,
   },
 });
 </script>
@@ -18,7 +20,11 @@ export default defineComponent({
     <el-header style="background: aliceblue">
       <navbar />
     </el-header>
-    <el-main>Main</el-main>
+    <div class="body">
+      <profile/>
+
+    </div>
+
   </el-container>
 </template>
 
@@ -26,6 +32,10 @@ export default defineComponent({
 @import "@/assets/base.css";
 .container {
   width: 100%;
+}
+.body {
+  width: 100%;
+  height: 100%;
 }
 #app {
   width: 100%;
