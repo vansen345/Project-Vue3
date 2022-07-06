@@ -9,24 +9,24 @@
           <h5 class="mg-0">
             <a href="">Sam Lanson</a>
           </h5>
-          <small class="mt-3">Web Developer at Webestica</small>
+          <small class="mt-3 text-small">Web Developer at Webestica</small>
           <p>
             I'd love to change the word, but they won't give me the source code
           </p>
           <div class="hastack gap-2">
             <div>
               <h6 class="mg-h6">256</h6>
-              <small>Post</small>
+              <small class="text-small">Post</small>
             </div>
             <div class="vr"></div>
             <div>
               <h6 class="mg-h6">2.5k</h6>
-              <small>Followers</small>
+              <small class="text-small">Followers</small>
             </div>
             <div class="vr"></div>
             <div>
               <h6 class="mg-h6">365</h6>
-              <small>Following</small>
+              <small class="text-small">Following</small>
             </div>
           </div>
         </div>
@@ -104,11 +104,41 @@
           </li>
         </ul>
       </div>
-       <div class="card-footer text-align-center pa-2">
-      <a href="" class="btn-link">View Profile</a>
+      <div class="card-footer text-align-center pa-2">
+        <a href="" class="btn-link">View Profile</a>
+      </div>
     </div>
-    </div>
-   
+    <ul class="list-footer lh-1 mt-1-5 pa-2">
+      <li class="nav-item">
+        <a href="" class="nav-link-footer"> About </a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link-footer"> Setting </a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link-footer color-blue"> Support </a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link-footer"> Docs </a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link-footer"> Help </a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link-footer"> Privacy & terms </a>
+      </li>
+    </ul>
+    <p class="list-footer p-text text-align-center mt-1">
+      ©2022
+
+      <a
+        class="nav-link-footer pd-0"
+        target="_blank"
+        href="https://www.webestica.com/"
+      >
+        Webestica
+      </a>
+    </p>
   </div>
 </template>
 <script lang="ts">
@@ -121,18 +151,20 @@ export default defineComponent({
 });
 </script>
 <style scoped>
+.nav-list-profile:hover {
+  color: #0f6fec;
+}
 p {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  color: #676a79;
 }
 .hastack {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
 }
-.gap-2 {
-  gap: 0.5rem;
-}
+
 .vr {
   display: inline-block;
   min-height: 1em;
@@ -149,10 +181,7 @@ p {
   margin-right: 0.6rem !important;
 }
 .card-profile {
-  width: 20%;
-  padding-left: 3rem;
-  padding-right: -2rem;
-  margin-left: 6rem;
+  padding-bottom: 3rem;
 }
 .mg-0 a {
   text-decoration: none;
@@ -162,7 +191,7 @@ p {
 }
 .card-profile-background {
   border: 1px solid rgba(0, 0, 0, 0.09);
-  border-radius: 10px;
+  border-radius: 0.4rem;
   background-color: #eef0f2;
   overflow: hidden;
   margin-top: 5px;
@@ -198,12 +227,13 @@ p {
   font-weight: 700;
   font-size: 0.9375rem;
   color: #14191e;
+  margin-bottom: 0;
 }
 .nav-link-secondary {
-  padding-left: 1rem;
-  margin-top: 13px;
+  padding-left: 0;
+  line-height: 2.3;
 }
-.nav-list-profile,.btn-link {
+.nav-list-profile {
   cursor: pointer;
   width: 100%;
   text-decoration: none;
@@ -213,10 +243,79 @@ p {
   display: inline-block;
   position: relative;
 }
+.btn-link {
+  padding: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #0f6fec;
+  text-decoration: none;
+}
 .card-footer {
-    padding: 0.5rem 0.5rem;
-  
-    border-top: 1px solid rgba(0, 0, 0, 0.09);
+  padding: 0.5rem 0.5rem;
+  background: #fff;
 
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+}
+.card-profile-body {
+  background: white;
+  padding: 1.6rem;
+  padding-top: 0;
+}
+hr {
+  margin: 1rem 0;
+  color: #a1a1a8;
+  background-color: currentColor;
+  opacity: 0.25;
+  border: 1px solid;
+  height: 1px;
+  border: 0;
+}
+span {
+  font-weight: 700;
+}
+.list-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.875em;
+}
+.lh-1 {
+  line-height: 1;
+}
+.mt-1-5 {
+  margin-top: 1.5rem;
+}
+.nav-link-footer {
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  color: #676a79;
+  display: block;
+}
+.nav-link-footer:hover {
+  color: #0f6fec;
+}
+.color-blue {
+  color: #0f6fec;
+}
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+.p-text {
+  gap: 0.5em;
+  color: #676a79;
+}
+.pd-0 {
+  padding: 0;
+}
+img {
+  vertical-align: middle;
+}
+.text-small {
+  font-size: 0.875em;
+  font-weight: 400;
+  color: #676a79;
 }
 </style>

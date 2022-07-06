@@ -1,13 +1,16 @@
 <template>
   <div class="collapse">
     <div class="btn-collapse">
-      <el-button type="primary" />
+      <el-button type="primary" class="btn-primary" />
       <input type="search" class="form-control" />
     </div>
     <div class="menu">
       <ul class="list-navbar">
         <li class="list-navbar-item nav-item-dropdown">
-          <a class="nav-link blue-item dropdown-toggle">Demo </a>
+          <a class="nav-link active dropdown-toggle"
+            >Demo<el-icon class="icon-arrowdown"><ArrowDownBold /></el-icon>
+          </a>
+
           <ul class="dropdown-menu">
             <li class="dropdown-menu-list">
               <a href="" class="dropdown-item active">Home default</a>
@@ -40,7 +43,10 @@
           </ul>
         </li>
         <li class="list-navbar-item nav-item-dropdown">
-          <a class="nav-link dropdown-toggle">Pages</a>
+          <a class="nav-link dropdown-toggle"
+            >Pages <el-icon class="icon-arrowdown"><ArrowDownBold /></el-icon
+          ></a>
+
           <ul class="dropdown-menu">
             <li class="dropdown-menu-list">
               <a href="" class="dropdown-item">Albums</a>
@@ -93,7 +99,9 @@
           </ul>
         </li>
         <li class="list-navbar-item nav-item-dropdown">
-          <a class="nav-link dropdown-toggle">Account</a>
+          <a class="nav-link dropdown-toggle"
+            >Account <el-icon class="icon-arrowdown"><ArrowDownBold /></el-icon
+          ></a>
           <ul class="dropdown-menu">
             <li class="dropdown-menu-list">
               <a href="" class="dropdown-item">Create a page</a>
@@ -128,25 +136,35 @@
           <a class="nav-link">My Netword</a>
         </li>
       </ul>
-      <div class="notification">
-          <el-button type="Info" class="btn-light" ><el-icon><ChatDotSquare /></el-icon></el-button>
-          <el-button type="Info" class="btn-light"><el-icon><Setting /></el-icon></el-button>
-          <el-button type="Info" class="btn-light"><el-icon><BellFilled /></el-icon></el-button>
-      </div>
+    </div>
+    <div class="notification">
+      <el-button type="Info" class="btn-light"
+        ><el-icon><ChatDotSquare /></el-icon
+      ></el-button>
+      <el-button type="Info" class="btn-light"
+        ><el-icon><Setting /></el-icon
+      ></el-button>
+      <el-button type="Info" class="btn-light"
+        ><span class="circle-notif"></span><el-icon><BellFilled /></el-icon
+      ></el-button>
+
+      <avartar-user class="avt-user" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import { ElButton, ElInput, ElMenu, } from "element-plus";
-import {BellFilled} from '@element-plus/icons-vue'
+import { ElButton, ElInput, ElMenu } from "element-plus";
+import { BellFilled } from "@element-plus/icons-vue";
+import avartarUser from "../Avatar/avatarUser.vue";
 export default defineComponent({
   components: {
     ElButton,
     ElInput,
     ElMenu,
-    BellFilled
+    BellFilled,
+    avartarUser,
   },
   setup() {
     const activeIndex = ref("1");
@@ -159,27 +177,35 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.nav-link.active {
+  color: #0f6fec;
+}
 .collapse {
   display: flex;
   justify-content: space-around;
-  
+  margin-left: 3rem;
+  flex: 0 0 auto;
 }
-.btn-light{
+.btn-light {
   background-color: #eef0f2;
-  
+  border: 0;
+  width: 2.5rem;
+  height: 2.5rem;
 }
-.notification{
+.notification {
   margin: 10px;
+  display: flex;
 }
 .menu {
   display: flex;
+  margin-left: 7rem;
 }
 .btn-collapse {
   display: flex;
- 
+
   margin: 10px;
- 
 }
+
 .form-control {
   border: 0;
   width: 100%;
@@ -194,14 +220,24 @@ export default defineComponent({
   margin: 10px;
 }
 .nav-link {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 3rem;
+  padding-right: 0rem;
   cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #676a79;
 }
 .nav-link:hover + .dropdown-menu {
   visibility: visible;
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.3s;
+}
+.nav-link:hover {
+  color: #0f6fec;
 }
 .dropdown-menu {
   visibility: hidden;
@@ -230,5 +266,27 @@ export default defineComponent({
   border: 0;
   text-decoration: none;
   font-size: var(--bs-body-font-size);
+}
+.circle-notif {
+  width: 8px;
+  height: 8px;
+  background: #d6293e;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  right: -15px;
+}
+.btn-primary {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.avt-user {
+  margin-top: 0px;
+  margin-left: 10px;
+}
+.icon-arrowdown {
+  vertical-align: middle;
+  font-size: 0.5rem;
+  margin-left: 0.35rem;
 }
 </style>
