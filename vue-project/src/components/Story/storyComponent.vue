@@ -1,65 +1,77 @@
 <template>
   <div class="arrow-hover">
     <div class="story-slider">
-      <div class="inner inner-item1">
-        <a href="#" class="icon-plus-story"
-          ><el-icon><CirclePlusFilled /></el-icon
-        ></a>
-        <h6 class="mt-2 text-h6">Post a story</h6>
-      </div>
-      <div class="inner inner-item-2">
-        <div class="img-story">
-          <div class="story-content">
-            <a href="" class="name-user">Judy Nguyensasdwddffffdsfdsfs</a>
+      <div class="tns1-mw">
+        <div class="tiny-slider">
+          <div class="tns-slider">
+            <div class="inner inner-item1">
+              <a href="#" class="icon-plus-story"
+                ><el-icon><Plus /></el-icon>
+              </a>
+              <h6 class="mt-2 text-h6">Post a story</h6>
+            </div>
+            <div class="inner inner-item-2" v-for="item in 4" :key="item">
+              <div class="img-story">
+                <div class="story-content">
+                  <a href="" class="name-user">Judy Nguyensasdwddffffdsfdsfs</a>
+                </div>
+              </div>
+            </div>
+          
           </div>
         </div>
       </div>
-      <div class="inner inner-item-3">
-        <div class="img-story">
-          <div class="story-content">
-            <a href="" class="name-user">Judy Nguyen</a>
-          </div>
-        </div>
+      <div class="tns-controls" tabindex="0">
+        <button
+          type="button"
+          class="btn-prev"
+          data-controls="prev"
+          tabindex="-1"
+        >
+          <el-icon><ArrowLeft /></el-icon>
+        </button>
+        <button
+          type="button"
+          class="btn-next"
+          data-controls="next"
+          tabindex="-1"
+        >
+          <el-icon><ArrowRight /></el-icon>
+        </button>
       </div>
-      <div class="inner inner-item-4">
-        <div class="img-story">
-          <div class="story-content">
-            <a href="" class="name-user">Judy Nguyen</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="tns-controls">
-      <button type="button" class="btn-prev" data-controls="prev">
-        <el-icon><ArrowLeft /></el-icon>
-      </button>
-      <button type="button" class="btn-next" data-controls="next">
-        <el-icon><ArrowRight /></el-icon>
-      </button>
     </div>
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ElImage } from "element-plus";
-import { da } from "element-plus/es/locale";
+
 export default defineComponent({
   components: {
     ElImage,
   },
+  data(){
+    return{
+      name_user:''
+    }
+  }
 });
 </script>
 <style scoped>
 .story-slider {
   width: 546px;
-  display: flex;
-  flex-direction: row;
- 
- 
+  position: relative;
+}
+.tns1-mw {
+  width: 546px;
+}
+.tns-slider {
+  width: 747px;
 }
 .img-story {
   position: absolute;
   bottom: 0;
+  width: 112px;
 }
 .story-content {
   margin: 4px;
@@ -72,7 +84,6 @@ export default defineComponent({
 .arrow-hover {
   width: 546px;
   overflow: hidden;
-   position: relative;
 }
 .tns-controls [data-controls] {
   position: absolute;
@@ -88,7 +99,7 @@ export default defineComponent({
   padding: 0;
   margin: 0 5px;
   z-index: 9;
-  transform: translateY(-50%);
+  transform: translateY(-300%);
   border-radius: 0.4rem;
 }
 .tns-controls [data-controls="prev"] {
@@ -103,12 +114,16 @@ export default defineComponent({
 .arrow-hover:hover [data-controls="next"] {
   right: 0;
 }
+.tns-controls [data-controls]:hover {
+  cursor: pointer;
+  background-color: #0f6fec;
+}
 
 .inner {
   background-color: white;
   position: relative;
   width: 112px;
-  border-radius: 5px;
+  border-radius: 0.4rem;
   display: inline-block;
   margin-left: 15px;
   height: 150px;
@@ -134,6 +149,7 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  vertical-align: top;
 }
 .inner-item-2,
 .inner-item-3,
@@ -158,5 +174,6 @@ export default defineComponent({
 .text-h6 {
   font-size: 0.875em;
   margin-top: 0.5rem;
+  color: #14191e;
 }
 </style>

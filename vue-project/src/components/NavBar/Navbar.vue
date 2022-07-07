@@ -138,12 +138,16 @@
       </ul>
     </div>
     <div class="notification">
-      <el-button type="Info" class="btn-light"
-        ><el-icon><ChatDotSquare /></el-icon
-      ></el-button>
-      <el-button type="Info" class="btn-light"
-        ><el-icon><Setting /></el-icon
-      ></el-button>
+      <el-button type="Info" class="btn-light">
+        <el-icon>
+          <ChatDotSquare />
+        </el-icon>
+      </el-button>
+      <el-button type="Info" class="btn-light">
+        <el-icon>
+          <Setting />
+        </el-icon>
+      </el-button>
       <el-button type="Info" class="btn-light"
         ><span class="circle-notif"></span><el-icon><BellFilled /></el-icon
       ></el-button>

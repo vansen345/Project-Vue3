@@ -1,5 +1,5 @@
 <template>
-  <div class="avatar-profile">
+  <div class="avatar-user">
     <a href=""
       ><img
         class="img-profile rounded border-3 border-white border"
@@ -9,7 +9,7 @@
   </div>
 </template>
 <style scoped>
-.avatar-profile {
+.avatar-user {
   width: 2.5rem;
   height: 45px;
   

@@ -4,6 +4,8 @@ import { ElContainer, ElHeader, ElMain } from "element-plus";
 import Navbar from "./components/NavBar/Navbar.vue";
 import Profile from "./components/Profile/Profile.vue";
 import Story from "./components/Story/storyComponent.vue";
+import PostStatus from "./components/PostStatus/PostStatus.vue";
+import FirstNews from "./components/News/firstNews.vue";
 
 export default defineComponent({
   components: {
@@ -13,6 +15,8 @@ export default defineComponent({
     Navbar,
     Profile,
     Story,
+    PostStatus,
+    FirstNews,
   },
 });
 </script>
@@ -23,12 +27,20 @@ export default defineComponent({
       <navbar />
     </el-header>
     <div class="body">
-      <div class="body-container">
-        <div class="body-profile">
-          <profile />
+      <div class="container">
+        <div class="profile">
+          <Profile />
         </div>
-        <div class="body-news">
-          <story />
+        <div class="news">
+          <div>
+            <Story />
+          </div>
+          <div>
+            <PostStatus />
+          </div>
+          <div>
+            <FirstNews />
+          </div>
         </div>
       </div>
     </div>
@@ -47,17 +59,20 @@ export default defineComponent({
 .body {
   width: 100%;
   height: 100%;
-  
 }
-.body-container {
+.container {
   width: 100%;
   display: flex;
 }
-.body-news {
-  width: 50%;
+.news {
+  width: 570px;
   margin-top: 2rem;
+  padding-left: 12px;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
-.body-profile {
+.profile {
   width: 259px;
   margin-left: 5rem;
   flex: 0 0 259px;
@@ -67,5 +82,6 @@ export default defineComponent({
   width: 100%;
   font-weight: normal;
   background-color: #eff2f6;
+  color: #676a79;
 }
 </style>

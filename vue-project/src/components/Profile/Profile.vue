@@ -190,7 +190,7 @@ p {
   font-size: 1.171875rem;
 }
 .card-profile-background {
-  border: 1px solid rgba(0, 0, 0, 0.09);
+  border: 1px solid #e8e8e8;
   border-radius: 0.4rem;
   background-color: #eef0f2;
   overflow: hidden;
