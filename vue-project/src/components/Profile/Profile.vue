@@ -143,7 +143,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import AvatarProfile from "../Avatar/avatarProfile.vue";
+import AvatarProfile from "../Avatar/avatarDetailProfile.vue";
 export default defineComponent({
   components: {
     AvatarProfile,

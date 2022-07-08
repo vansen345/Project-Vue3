@@ -7,7 +7,7 @@
           <div>
             <div class="header-name">
               <h6>
-                <a href="">Lori Ferguson</a>
+                <a class="text-header" href="">Lori Ferguson</a>
               </h6>
               <span class="nav-item-small d-flex item-center">2hr</span>
             </div>
@@ -94,8 +94,12 @@ h6 {
 }
 a {
   text-decoration: none;
+  
+}
+.text-header{
   color: #14191e;
   font-weight: 700;
+
 }
 .nav-item-small,
 .small,
@@ -125,7 +129,7 @@ a {
   border-top-right-radius: calc(0.4rem - 1px);
 }
 .card-body-img {
-  width: 504px;
+  width: 100%;
 }
 .mb-1 {
   margin-bottom: 1rem;
@@ -135,6 +139,7 @@ a {
 }
 .el-icon {
   vertical-align: -0.123em;
+  color: #14191e;
 }
 .pe-2 {
   padding-left: 0.25rem;

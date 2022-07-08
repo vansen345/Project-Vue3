@@ -10,22 +10,27 @@
 </template>
 <style scoped>
 .avatar-profile {
-  width: 2.5rem;
-  height: 2.5rem;
-  
-  flex: 0 0 2.5rem;
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  display: inline-block;
+  flex: 0 0 3rem;
 }
 .img-profile {
   width: 100%;
   height: 100%;
-  margin-left: 0.5rem;
 
- 
+  margin-top: -1rem;
+  border: solid white;
+  object-fit: cover;
 }
 .rounded {
   border-radius: 0.4rem !important;
 }
-
+.border-3 {
+  border-width: 3px;
+  border-color: white;
+}
 /* .border-white{
   border-color: #fff !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;

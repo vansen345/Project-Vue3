@@ -1,8 +1,14 @@
 <template>
   <div class="collapse">
     <div class="btn-collapse">
-      <el-button type="primary" class="btn-primary" />
-      <input type="search" class="form-control" />
+      <ElButton class="btn-primary" />
+      <ElInput
+        style="width: 100%"
+        v-model="input1"
+        class="w-50 m-2"
+        size="large"
+        placeholder="Search"
+      />
     </div>
     <div class="menu">
       <ul class="list-navbar">
@@ -152,23 +158,25 @@
         ><span class="circle-notif"></span><el-icon><BellFilled /></el-icon
       ></el-button>
 
-      <avartar-user class="avt-user" />
+      <AvatarProfile />
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import { Search } from "@element-plus/icons-vue";
 import { defineComponent, ref } from "vue";
 import { ElButton, ElInput, ElMenu } from "element-plus";
 import { BellFilled } from "@element-plus/icons-vue";
-import avartarUser from "../Avatar/avatarUser.vue";
+import AvatarProfile from "../Avatar/avatarProfile.vue";
 export default defineComponent({
   components: {
     ElButton,
     ElInput,
     ElMenu,
     BellFilled,
-    avartarUser,
+    AvatarProfile,
+    Search,
   },
   setup() {
     const activeIndex = ref("1");
@@ -187,7 +195,8 @@ export default defineComponent({
 .collapse {
   display: flex;
   justify-content: space-around;
-  margin-left: 3rem;
+  margin-left: 4.5rem;
+  margin-right: 4.5rem;
   flex: 0 0 auto;
 }
 .btn-light {
@@ -202,7 +211,7 @@ export default defineComponent({
 }
 .menu {
   display: flex;
-  margin-left: 7rem;
+  margin-left: 3rem;
 }
 .btn-collapse {
   display: flex;
@@ -282,7 +291,9 @@ export default defineComponent({
 }
 .btn-primary {
   width: 2.5rem;
-  height: 2.5rem;
+  height: 36px;
+  background: #0f6fec;
+  border-color: #0f6fec;
 }
 .avt-user {
   margin-top: 0px;
@@ -292,5 +303,12 @@ export default defineComponent({
   vertical-align: middle;
   font-size: 0.5rem;
   margin-left: 0.35rem;
+}
+.el-input--large {
+  margin-left: 2rem;
+}
+.el-input__wrapper {
+  background: rgb(238, 240, 242);
+  opacity: 1;
 }
 </style>
