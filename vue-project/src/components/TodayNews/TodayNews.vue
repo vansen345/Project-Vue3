@@ -23,7 +23,9 @@
 .today-news {
   width: 261px;
   background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 0.4rem;
+  border-top-color: #eaebec;
 }
 .header-news {
   padding: 1.25rem 1.25rem 0;
@@ -50,8 +52,8 @@ a {
 .first-new {
   margin-bottom: 1rem;
 }
-.d-flex{
-    display: flex;
+.d-flex {
+  display: flex;
 }
 .spinner-dot {
   background-color: #a1a1a8;
@@ -61,18 +63,18 @@ a {
   border-radius: 50%;
   width: 4px;
 }
-.mr-2{
-    margin-right: 0.5rem;
+.mr-2 {
+  margin-right: 0.5rem;
 }
-.btn-link-loader{
-    font-size: 0.875em;
-    color: rgb(20, 25, 30);
-    font-weight: 500;
+.btn-link-loader {
+  font-size: 0.875em;
+  color: rgb(20, 25, 30);
+  font-weight: 500;
 }
-.tiltle-hover:hover{
-    color: #0c59bd;;
+.tiltle-hover:hover {
+  color: #0c59bd;
 }
-.tiltle-hover{
-    cursor: pointer;
+.tiltle-hover {
+  cursor: pointer;
 }
 </style>

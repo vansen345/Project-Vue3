@@ -8,7 +8,7 @@
             <div class="header-name">
               <h6>
                 <a class="text-advertismenr" href=""
-                  >Bootstrap: Font-end framework</a
+                  >Bootstrap: Front-end framework</a
                 >
               </h6>
             </div>
@@ -109,7 +109,15 @@ img {
   color: #fff;
   background-color: #0f6fec;
 }
-.icon-sponsor{
-    margin-left: 0.25rem;
+.icon-sponsor {
+  margin-left: 0.25rem;
+}
+.nav-link-pills:hover {
+  background-color: rgba(20, 25, 30, 0.1);
+}
+.nav-link-pills {
+  color: black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.4rem;
 }
 </style>

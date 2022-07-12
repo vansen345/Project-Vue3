@@ -6,6 +6,9 @@
         <textarea
           class="form-control pe-4 border-0"
           rows="2"
+          ref="textarea"
+          @focus="resize"
+          @keyup="resize"
           data-autoresize=""
           placeholder="Share your thoughts..."
         ></textarea>
@@ -20,7 +23,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link-pills" href=""
-          ><el-icon cclass=" el-icon icon-video"><VideoCameraFilled /></el-icon
+          ><el-icon class=" el-icon icon-video"><VideoCameraFilled /></el-icon
           ><span>Video</span></a
         >
       </li>
@@ -64,6 +67,8 @@
 }
 .form-control {
   resize: none;
+  overflow: hidden;
+  min-height: 80px;
 }
 .border-0 {
   border: none;
@@ -130,5 +135,16 @@ export default defineComponent({
   components: {
     AvatarUser,
   },
+  mounted(){
+      this.resize();
+
+  },
+  methods:{
+    resize(){
+      const {textarea} = this.$refs;
+      textarea.style.height = textarea.scrollHeight - 4 + 'px';
+    }
+  },
+ 
 });
 </script>

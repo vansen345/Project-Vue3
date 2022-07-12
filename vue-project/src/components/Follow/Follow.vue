@@ -51,7 +51,9 @@ export default defineComponent({
 .card-follow {
   width: 261px;
   background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 0.4rem;
+  border-top-color: rgba(0, 0, 0, 0.09);
 }
 .header-follow {
   padding: 1.25rem 1.25rem 0;
@@ -127,6 +129,10 @@ a {
   display: grid;
 }
 .name-follow:hover {
-  color: #0c59bd;;
+  color: #0c59bd;
+}
+.icon-plus:hover {
+  color: #fff;
+  background-color: #0f6fec;
 }
 </style>

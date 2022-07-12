@@ -30,33 +30,40 @@ export default defineComponent({
 <template>
   <el-container class="container">
     <el-header class="header position-fixed">
-      <navbar />
+      <div class="navbar">
+        <div class="row-header">
+          
+          <Navbar />
+        </div>
+      </div>
     </el-header>
     <div class="body">
-      <div class="container">
-        <div class="profile">
-          <Profile />
-        </div>
-        <div class="news">
-          <div>
-            <Story />
+      <div class="container-body">
+        <div class="row">
+          <div class="profile">
+            <Profile />
           </div>
-          <div>
-            <PostStatus />
+          <div class="news">
+            <div>
+              <Story />
+            </div>
+            <div>
+              <PostStatus />
+            </div>
+            <div>
+              <FirstNews />
+            </div>
+            <div>
+              <Advertisment />
+            </div>
           </div>
-          <div>
-            <FirstNews />
-          </div>
-          <div>
-            <Advertisment />
-          </div>
-        </div>
-        <div class="follow">
-          <div>
-            <Follow />
-          </div>
-          <div>
-            <TodayNews />
+          <div class="follow">
+            <div>
+              <Follow />
+            </div>
+            <div>
+              <TodayNews />
+            </div>
           </div>
         </div>
       </div>
@@ -75,21 +82,32 @@ export default defineComponent({
   left: 0;
   z-index: 1030;
 }
+.navbar {
+  width: 1351px;
+  display: flex;
+}
 .header {
   background: white;
   padding: 0;
-  display: flex;
+  width: 1351px;
   height: 56px;
+}
+.row-header {
+  width: 1351px;
+  display: flex;
+ 
 }
 .body {
   width: 100%;
   height: 100%;
   padding-top: calc(1.5rem + 35px);
 }
-.container {
-  width: 100%;
-  display: flex;
+.container-body {
+  width: 1140px;
   padding-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
 }
 .news {
   width: 570px;
@@ -101,9 +119,13 @@ export default defineComponent({
 }
 .profile {
   width: 259px;
-  margin-left: 5rem;
+
   flex: 0 0 259px;
   margin-top: 1.6rem;
+}
+.row {
+  display: flex;
+  width: 1140px;
 }
 .follow {
   width: 285px;

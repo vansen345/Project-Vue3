@@ -46,7 +46,7 @@
         </li>
         <li class="nav-item mg-le-auto">
           <a class="nav-link" href=""
-            ><el-icon  class="no-inherit">
+            ><el-icon class="no-inherit">
               <Share />
             </el-icon>
             <span class="pe-2">Share (3)</span></a
@@ -76,8 +76,8 @@ export default defineComponent({
 .nav-item {
   list-style: none;
 }
-.nav-link:hover{
-    color: #0f6fec;
+.nav-link:hover {
+  color: #0f6fec;
 }
 .card-headers-news,
 .card-body-news {
@@ -94,12 +94,10 @@ h6 {
 }
 a {
   text-decoration: none;
-  
 }
-.text-header{
+.text-header {
   color: #14191e;
   font-weight: 700;
-
 }
 .nav-item-small,
 .small,
@@ -139,7 +137,6 @@ a {
 }
 .el-icon {
   vertical-align: -0.123em;
-  color: #14191e;
 }
 .pe-2 {
   padding-left: 0.25rem;
@@ -150,7 +147,15 @@ a {
 .gap-0 {
   gap: 0.7rem;
 }
-.mg-le-auto{
-    margin-left: auto;
+.mg-le-auto {
+  margin-left: auto;
+}
+.nav-link-pills:hover {
+  background-color: rgba(20, 25, 30, 0.1);
+}
+.nav-link-pills {
+  color: black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.4rem;
 }
 </style>

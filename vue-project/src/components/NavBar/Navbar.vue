@@ -1,16 +1,35 @@
 <template>
   <div class="collapse">
-    <div class="btn-collapse">
-      <ElButton class="btn-primary" />
-      <ElInput
-        style="width: 100%"
-        v-model="input1"
-        class="w-50 m-2"
-        size="large"
-        placeholder="Search"
+    <a href="" class="nav-brand">
+      <img
+        class="img-logo"
+        src="https://social.webestica.com/assets/images/logo.svg"
+        alt=""
       />
-    </div>
+    </a>
+
     <div class="menu">
+      <div class="nav">
+        <div class="nav-item">
+          <form class="rounded position-relative">
+            <input
+              type="search"
+              class="form-control pe-3"
+              placeholder="Search....."
+            />
+            <button class="position-absolute border-0 background-transparent">
+              <Search
+                style="
+                  width: 1em;
+                  height: 1em;
+                  font-size: 1.171875rem;
+                  color: #696c7b;
+                "
+              />
+            </button>
+          </form>
+        </div>
+      </div>
       <ul class="list-navbar">
         <li class="list-navbar-item nav-item-dropdown">
           <a class="nav-link active dropdown-toggle"
@@ -42,8 +61,7 @@
             <li class="dropdown-driver"></li>
             <li class="dropdown-menu-list">
               <a href="" class="dropdown-item"
-                ><i class="text-success fa-solid fa-cloud-arrow-down"></i>Buy
-                social!</a
+                ><el-icon class="me-2"><Download /></el-icon>Buy social!</a
               >
             </li>
           </ul>
@@ -144,19 +162,18 @@
       </ul>
     </div>
     <div class="notification">
-      <el-button type="Info" class="btn-light">
-        <el-icon>
-          <ChatDotSquare />
-        </el-icon>
-      </el-button>
-      <el-button type="Info" class="btn-light">
-        <el-icon>
-          <Setting />
-        </el-icon>
-      </el-button>
-      <el-button type="Info" class="btn-light"
-        ><span class="circle-notif"></span><el-icon><BellFilled /></el-icon
-      ></el-button>
+      <a href="" class="btn-light border-radius">
+        <el-icon class="icon-md"><ChatLineSquare /></el-icon>
+      </a>
+
+      <a href="" class="btn-light border-radius"
+        ><el-icon class="icon-md"> <Setting /> </el-icon
+      ></a>
+
+      <a href="" class="btn-light border-radius"
+        ><span class="circle-notif"></span
+        ><el-icon class="icon-md"><BellFilled /></el-icon
+      ></a>
 
       <AvatarProfile />
     </div>
@@ -194,46 +211,66 @@ export default defineComponent({
 }
 .collapse {
   display: flex;
-  justify-content: space-around;
-  margin-left: 4.5rem;
-  margin-right: 4.5rem;
+  align-items: center;
+  width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .btn-light {
   background-color: #eef0f2;
   border: 0;
   width: 2.5rem;
   height: 2.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.border-radius {
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 }
 .notification {
   margin: 10px;
   display: flex;
 }
+
 .menu {
   display: flex;
-  margin-left: 3rem;
+  flex-grow: 1;
 }
 .btn-collapse {
   display: flex;
 
   margin: 10px;
 }
-
+.icon-md {
+  font-size: 0.9375rem;
+  color: #676a79;
+}
 .form-control {
   border: 0;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: 5px;
   margin-left: 20px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgb(238, 240, 242);
 }
 .list-navbar {
   display: flex;
   list-style: none;
-  margin: 10px;
+  margin-left: auto;
+  padding-left: 0;
+  margin-right: 10px;
 }
 .nav-link {
-  padding-left: 3rem;
+  padding-left: 2rem;
   padding-right: 0rem;
   cursor: pointer;
   font-size: 0.9375rem;
@@ -244,8 +281,10 @@ export default defineComponent({
   padding-bottom: 0;
   color: #676a79;
 }
-.nav-link:hover + .dropdown-menu {
+.list-navbar-item:hover > .dropdown-menu {
   visibility: visible;
+  opacity: 1;
+  z-index: 1;
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.3s;
 }
@@ -259,19 +298,24 @@ export default defineComponent({
   text-align-last: start;
   position: absolute;
   list-style: none;
-  border-radius: 5px;
-  /* margin: 0; */
-  margin: 5px auto;
+  border-radius: 0.4rem;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   background-clip: padding-box;
-  z-index: 1;
+  transform: translateY(1em);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
+    z-index 0s linear 0.01s;
+  min-width: 15rem;
+}
+.dropdown-menu-list {
+  padding: 6.4px 19.2px;
 }
 .dropdown-item {
   width: 100%;
-  padding: 0.4rem 1.2rem;
   font-family: var(--bs-body-font-family);
-  font-weight: 400;
+  font-weight: 500;
   color: #676a79;
   text-align: inherit;
   white-space: nowrap;
@@ -286,8 +330,8 @@ export default defineComponent({
   background: #d6293e;
   border-radius: 50%;
   position: absolute;
-  top: -10px;
-  right: -15px;
+  top: 0;
+  right: 0;
 }
 .btn-primary {
   width: 2.5rem;
@@ -310,5 +354,50 @@ export default defineComponent({
 .el-input__wrapper {
   background: rgb(238, 240, 242);
   opacity: 1;
+}
+.rounded {
+  border-radius: 0.4rem;
+}
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+.pe-3 {
+  padding-left: 3rem;
+}
+.border-0 {
+  border: 0;
+  cursor: pointer;
+}
+.background-transparent {
+  background: transparent;
+}
+.dropdown-driver {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.me-2 {
+  margin-right: 0.5rem;
+  color: #0cbc87;
+}
+.dropdown-item:hover {
+  color: #0f6fec;
+}
+.dropdown-item.active {
+  color: #0f6fec;
+}
+.icon-md:hover {
+  color: #0c59bd;
+}
+.img-logo {
+  display: block;
+  width: 36px;
+  height: 36px;
 }
 </style>
